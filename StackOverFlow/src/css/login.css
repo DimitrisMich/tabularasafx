@@ -1,0 +1,238 @@
+/* 
+    Document   : login
+    Created on : Dec 28, 2013, 4:47:56 PM
+    Author     : d.michaelides
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root {
+    display: block;
+}
+.main_background{
+	-fx-background-color:lightblue;
+/*    -fx-background-color: linear-gradient(#ccccff,#cccccc);*/
+}
+.custom_label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#welcome_text {
+   -fx-font-size: 32px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-text-fill: #818181;
+    /*-fx-fill: #ffffff;*/
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7), 6, 0.0, 0, 2 );
+}
+.custom_button_ok{
+    -fx-border-color: #009900;
+    -fx-text-fill: #009900;
+    -fx-background-radius: 90px;
+    -fx-background-color: linear-gradient(#f6f9fa, #b4cfd6);
+    /*-fx-background-color: #edffff;*/
+    -fx-border-radius: 90px;
+    /*-fx-effect: dropshadow( three-pass-box , #999999, 10 , 0.5, 1px , 1px );*/
+}
+.custom_button_ok:hover{
+    -fx-background-color: linear-gradient(#b4cfd6, #f6f9fa);
+    /*-fx-effect: null;*/
+}
+
+.custom_button_ok1{
+    -fx-background-color: linear-gradient(#339900, #10ff10);
+}
+.custom_button_ok1:hover{
+    -fx-background-color: linear-gradient(#10ff10, #339900);
+}
+.language:hover{
+    -fx-background-color: #ffffff;
+}
+.page_title{
+   -fx-font-size: 26px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-text-fill: #818181;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7), 6, 0.0, 0, 2 );
+}
+.region_title{
+   -fx-font-size: 13px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-text-fill: #0033CC;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7), 6, 0.0, 0, 2 );
+}
+.region_title_2{
+   -fx-font-size: 12px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-text-fill: #71A4DD;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7), 6, 0.0, 0, 2 );
+}
+
+.confirm-button {
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+		-fx-background-insets: 0,1,2,3;
+		-fx-background-radius: 3,2,2,2;
+		-fx-padding: 4 9 4 9;
+		-fx-text-fill: white;
+		-fx-font-size: 12px;
+}
+.confirm-button:hover{
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#2f4b8f, #7ebcea),
+        linear-gradient(#263e75, #426ab7),
+        linear-gradient(#223768, #395cab);
+}
+.confirm-button Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 0, 0.0 , 0 , 1);
+}
+
+.cancel-button {
+
+    -fx-background-color: 
+        linear-gradient(#f2f2f2, lightblue),
+        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, lightblue 100%),
+        linear-gradient(#dddddd 0%, lightblue 50%);
+		
+ /*-fx-background-color: 
+        linear-gradient(#f2f2f2, #d6d6d6),
+        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
+        linear-gradient(#dddddd 0%, #f6f6f6 50%);
+ */   
+		
+	-fx-background-radius: 3,2,2,2;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.cancel-button:hover {
+
+    -fx-background-color: 
+        linear-gradient(lightblue, #f2f2f2),
+        linear-gradient(lightblue 0%, #d9d9d9 20%, #fcfcfc 100%),
+        linear-gradient(lightblue 0%, #dddddd 50%);
+		/*
+    -fx-background-color: 
+        linear-gradient(#d6d6d6, #f2f2f2),
+        linear-gradient(#d6d6d6 0%, #d9d9d9 20%, #fcfcfc 100%),
+        linear-gradient(#f6f6f6 0%, #dddddd 50%);*/
+}
+.regular_button{
+    -fx-border-color: #001199;
+    -fx-text-fill: #001199;
+    -fx-background-radius: 90px;
+    -fx-background-color: linear-gradient(#f6f9fa, #b4cfd6);
+    -fx-border-radius: 90px;
+}
+.regular_button:hover{
+    -fx-background-color: linear-gradient(#b4cfd6, #f6f9fa);
+}
+.region{
+	-fx-opacity:0.4;
+	-fx-background-color : lightgrey
+}
+
+.custom-region-border {
+    -fx-border-color:#000099;
+	-fx-padding: 2,2,2,2;
+	-fx-spacing: 4;
+	-fx-background-color : #47B2B2;
+}
+.custom-region{
+	-fx-padding: 2,2,2,2;
+	-fx-spacing: 4;
+}
+.triangle{
+    -fx-fill: linear-gradient(BLUE, DODGERBLUE);
+    -fx-effect: dropshadow( three-pass-box , BLACK , 12,0,0,0 );
+}
+.triangle:hover{
+    -fx-fill: linear-gradient(DODGERBLUE, BLUE);
+    -fx-effect: dropshadow( three-pass-box , BLACK , 12,0,0,0 );
+}
+.triangle:pressed{
+    -fx-fill: BLUE;
+    -fx-effect: dropshadow( three-pass-box , BLACK , 12,0,0,0 );
+}
+
+
+.grey_background{
+    -fx-background-color: #c1c1c1;
+    
+}
+.copyright{
+    -fx-background-color: #ccffff;
+}
+.time-table-cell{
+    -fx-background-color:lightgrey;
+}
+.time-table-cell:hover{
+    -fx-border-color:red;
+    -fx-background-color:grey;
+}
+.edit-button{
+    -fx-opacity:0.3;
+    -fx-background-color:transparent;
+/*    -fx-background-radius: 90px;
+    -fx-border-radius: 90px;*/
+}
+.edit-button:hover{
+    -fx-opacity:0.7;
+/*    -fx-effect: dropshadow( three-pass-box , BLACK , 12,0,0,0 );*/
+/*    -fx-border-color:blue;*/
+}
+.edit-button:pressed{
+    -fx-opacity:1;
+/*    -fx-effect: null;*/
+/*    -fx-border-color:blue;*/
+/*    -fx-background-color:lightblue;*/
+/*    -fx-background-color:#CCFFFF;*/
+}
+.default-cursor{
+    -fx-background-color:#EEEEEE;
+    -fx-cursor:default;
+}
+
+
+/* =============== STYLE ALL SCROLL BARS ================================================= 
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 3;
+}
+.scroll-bar .thumb {
+    -fx-background-color: #33ADFF;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0.3em;
+}
+.scroll-bar .track  {
+    -fx-background-color: transparent;
+    -fx-background-insets:  0;
+    -fx-border-color: rgba(255,255,255,0.5);
+    -fx-border-radius: 0.3em;
+}
+.scroll-bar .increment-button {
+    -fx-background-color: null;
+}
+.scroll-bar:horizontal .increment-button {
+    -fx-padding: 0.3em 0 0.3em 0;
+}
+.scroll-bar:vertical .increment-button {
+    -fx-padding: 0 0.3em 0 0.3em;
+}
+.scroll-bar .decrement-button, .scroll-bar .increment-arrow, .scroll-bar .decrement-arrow {
+    -fx-background-color: null;
+    -fx-padding: 0;
+}
+.corner {
+    -fx-background-color: transparent;
+}
+*/
