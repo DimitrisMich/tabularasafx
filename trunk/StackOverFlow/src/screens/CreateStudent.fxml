@@ -51,7 +51,7 @@
                 <Insets bottom="2.0" top="2.0" fx:id="x3" />
               </VBox.margin>
             </Separator>
-            <BorderPane maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-border-width: 0,0,2,2;&#10;-fx-border-color: white;&#10;">
+            <BorderPane maxWidth="790.0" prefHeight="-1.0" prefWidth="790.0" style="-fx-border-width: 0,0,2,2;&#10;-fx-border-color: white;&#10;">
               <bottom>
                 <HBox alignment="CENTER" mouseTransparent="false" prefHeight="27.0" prefWidth="450.0" styleClass="custom-region" BorderPane.alignment="CENTER" BorderPane.margin="$x2">
                   <children>
@@ -79,7 +79,7 @@
                 </ImageView>
               </center>
               <top>
-                <Label fx:id="profileLabel" styleClass="region_title" text="%profile_pic" BorderPane.alignment="CENTER_LEFT" />
+                <Label fx:id="profileLabel" alignment="CENTER_LEFT" styleClass="region_title" text="%profile_pic" BorderPane.alignment="CENTER_LEFT" />
               </top>
             </BorderPane>
             <Separator id="theSep" maxWidth="1.7976931348623157E308" opacity="0.31" prefWidth="1000.0" VBox.margin="$x3">

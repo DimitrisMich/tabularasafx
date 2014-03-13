@@ -108,7 +108,7 @@ public class HomePageController extends StageController{
                             }
                             else if(item.getValue().equals("Home")){
                                 try {
-                                    ScreenNavigator.getInstance(null).goToScreen("HomePage");
+                                    ScreenNavigator.getInstance(null).goToScreen("Home");
                                 } catch (IOException ex) {
                                     Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
                                 }
