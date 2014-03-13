@@ -9,6 +9,9 @@
 root {
     display: block;
 }
+.image-background {
+     -fx-background-image: url("../images/background.jpg");
+}
 .main_background{
 	-fx-background-color:lightblue;
 /*    -fx-background-color: linear-gradient(#ccccff,#cccccc);*/

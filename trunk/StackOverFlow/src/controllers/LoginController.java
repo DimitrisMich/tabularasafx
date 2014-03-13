@@ -6,30 +6,18 @@ package controllers;
 
 import images.Images;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
-import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import screens.FXMLs;
-import services.TransitionService;
 import utils.LanguageUtils;
 import utils.menu.ScreenNavigator;
 
@@ -37,8 +25,7 @@ import utils.menu.ScreenNavigator;
  *
  * @author d.michaelides
  */
-public class LoginController extends StageController{
-    private TransitionService service;
+public class LoginController{
     
     @FXML private Button cancelButton;
     @FXML private Label welcomeLabel;
@@ -48,20 +35,11 @@ public class LoginController extends StageController{
     @FXML private ImageView language;
     private Image img;
     private ResourceBundle labels;
-    private AnchorPane root;
-    private Scene nextScene;
-    @FXML private BorderPane region;
-    @FXML private ProgressIndicator progress;
-    
     
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
     /**
      Set the text to all visible elements of the stage
      * plus change flag
@@ -88,8 +66,20 @@ public class LoginController extends StageController{
 
     @FXML
     private void goToHomePage(Event event) throws IOException {
-        ScreenNavigator.initFields(service, stage, myFXMLLoader, region, progress, null);
-        ScreenNavigator.goToScreen("HomePage");
+        Node  source = (Node)  event.getSource(); 
+        ScreenNavigator.getInstance((Stage) source.getScene().getWindow()).goToScreen("HomePage");
+    }
+    
+    public void initializeAll(Stage stage){
+        labels = LanguageUtils.getInstance().getCurrentLanguage();
+        System.out.println(" initialize All screens");
+        
+        ScreenNavigator.getInstance(stage).controllers.put("HomePage",      new HomePageController(     FXMLs.class.getResource("HomePage.fxml"),      labels));
+        ScreenNavigator.controllers.put("CreateClass",   new CreateClassController(  FXMLs.class.getResource("CreateClass.fxml"),   labels));
+        ScreenNavigator.controllers.put("CreateStudent", new CreateStudentController(FXMLs.class.getResource("CreateStudent.fxml"), labels));
+        ScreenNavigator.controllers.put("CreateTeacher", new CreateTeacherController(FXMLs.class.getResource("CreateTeacher.fxml"), labels));
+        ScreenNavigator.controllers.put("Home", new HomeController(FXMLs.class.getResource("Home.fxml"), labels));
+    
     }
 }
  
