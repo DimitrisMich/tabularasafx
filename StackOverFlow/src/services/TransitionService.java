@@ -14,6 +14,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import utils.LanguageUtils;
+import utils.menu.MyClassLoader;
 
 
 /**
@@ -25,6 +26,7 @@ public class TransitionService extends Service<SceneComponents> {
     private SplitPane splitPane;
     private FXMLLoader myLoader;
     private Stage stage;
+    public static ClassLoader cachingClassLoader = new MyClassLoader(FXMLLoader.getDefaultClassLoader()); 
     
     public TransitionService (String sceneName, SplitPane splitPane, FXMLLoader myLoader, Stage stage){
         this.sceneName = sceneName;
@@ -42,10 +44,10 @@ public class TransitionService extends Service<SceneComponents> {
             @Override
             protected SceneComponents call() throws Exception {
             try{
-            System.out.println("call() 0  : "+ Calendar.getInstance().getTimeInMillis());
                 double x = stage.getWidth() - (stage.getWidth() - stage.getScene().getWidth());
                 double y = stage.getHeight() - (stage.getHeight() - stage.getScene().getHeight());
-                FXMLLoader myFXLoader = new FXMLLoader(FXMLs.class.getResource(sceneName+".fxml"), LanguageUtils.getInstance().getCurrentLanguage());
+                FXMLLoader myFXLoader = new FXMLLoader(FXMLs.class.getResource(sceneName+".fxml"), LanguageUtils.getInstance().getCurrentLanguage()); 
+                myFXLoader.setClassLoader(cachingClassLoader); 
                 AnchorPane root = (AnchorPane)myFXLoader.load();
                 
                 StageController controler = ((StageController) myFXLoader.getController());
@@ -56,30 +58,15 @@ public class TransitionService extends Service<SceneComponents> {
                     double divPosition = splitPane.getDividerPositions()[0];
                     ((SplitPane)myFXLoader.getNamespace().get("splitPane")).setDividerPosition(0, divPosition);
                 }
-            System.out.println("call() 1  : "+ Calendar.getInstance().getTimeInMillis());
                 return new SceneComponents(root, x, y);
                 
             }catch(Exception e){
-                System.out.println("EXCEPTION EXCEPTION EXCEPTION EXCEPTION EXCEPTION  ");
                 e.printStackTrace();
                 return null;
                         
             }
             }
         }
-        // Example for Using a Task:
-        // fetch available product types in the background
-        //Task<ProductType[]> getProductTypes = new Task<ProductType[]>(){
-        //    @Override protected ProductType[] call() throws Exception {
-        //        ProductTypeClient ptClient = new ProductTypeClient();
-        //        ProductType[] types = ptClient.findAll_JSON(ProductType[].class);
-        //        ptClient.close();
-        //        return types;
-        //    }
-        //};
-        //...
-        //new Thread(getProductTypes).start();
-        
         
     }
     

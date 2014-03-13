@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../Labels_en.properties?>
+
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-1.0" prefHeight="940.0" prefWidth="905.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <ScrollPane id="scroll" fx:id="theScroll" fitToWidth="true" hbarPolicy="NEVER" prefHeight="940.0" prefWidth="905.0" style="-fx-background-color:lightblue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <VBox fx:id="theV" alignment="CENTER" fillWidth="true" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="">
+          <children>
+            <BorderPane prefHeight="52.0" prefWidth="790.0">
+              <center>
+                <Label fx:id="mainTitle" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxWidth="403.0" prefHeight="46.0" prefWidth="321.0" styleClass="page_title" text="%new.teacher.create" textFill="radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 100.0px 100.0px, radius 200.0px, 0xff0000ff 0.0%, 0x0000ffff 30.0%, 0x000000ff 100.0%)" BorderPane.alignment="CENTER">
+                  <font>
+                    <Font name="Aparajita" size="33.0" />
+                  </font>
+                  <BorderPane.margin>
+                    <Insets fx:id="x2" />
+                  </BorderPane.margin>
+                </Label>
+              </center>
+            </BorderPane>
+            <Separator id="theSep" maxWidth="1.7976931348623157E308" opacity="0.31" prefWidth="1000.0">
+              <effect>
+                <Lighting specularConstant="1.5222222222222224">
+                  <bumpInput>
+                    <Shadow />
+                  </bumpInput>
+                  <light>
+                    <javafx.scene.effect.Light.Spot pointsAtZ="-100.0" x="100.0" y="100.0" z="100.0">
+                      <color>
+                        <Color blue="0.682" green="0.094" red="0.000" fx:id="x1" />
+                      </color>
+                    </javafx.scene.effect.Light.Spot>
+                  </light>
+                </Lighting>
+              </effect>
+              <VBox.margin>
+                <Insets bottom="2.0" top="2.0" fx:id="x3" />
+              </VBox.margin>
+            </Separator>
+            <BorderPane maxWidth="790.0" prefHeight="184.0" prefWidth="790.0" style="-fx-border-width: 0,0,2,2;&#10;-fx-border-color: white;&#10;">
+              <bottom>
+                <HBox alignment="CENTER" mouseTransparent="false" prefHeight="27.0" prefWidth="450.0" styleClass="custom-region" BorderPane.alignment="CENTER" BorderPane.margin="$x2">
+                  <children>
+                    <Button id="addPicture" fx:id="addPictureButton" mnemonicParsing="false" onAction="#addImage" styleClass="regular_button" text="%addpicture" />
+                    <Button fx:id="cropButton" disable="true" mnemonicParsing="false" mouseTransparent="false" onAction="#cropImage" styleClass="regular_button" text="" underline="false">
+                      <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../images/icons/crop.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                  </children>
+                </HBox>
+              </bottom>
+              <center>
+                <ImageView fx:id="image" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" style="" BorderPane.alignment="CENTER" BorderPane.margin="$x2">
+                  <effect>
+                    <InnerShadow color="#404040" radius="4.5" width="10.0" />
+                  </effect>
+                  <image>
+                    <Image url="@../images/default_profile.png" />
+                  </image>
+                </ImageView>
+              </center>
+              <top>
+                <Label fx:id="profileLabel" styleClass="region_title" text="%profile_pic" />
+              </top>
+            </BorderPane>
+            <Separator id="theSep" maxWidth="1.7976931348623157E308" opacity="0.31" prefWidth="1000.0" VBox.margin="$x3">
+              <effect>
+                <Lighting specularConstant="1.5222222222222224">
+                  <bumpInput>
+                    <Shadow />
+                  </bumpInput>
+                  <light>
+                    <javafx.scene.effect.Light.Spot color="#0018ae" pointsAtZ="-100.0" x="100.0" y="100.0" z="100.0" />
+                  </light>
+                </Lighting>
+              </effect>
+            </Separator>
+            <Separator id="theSep" maxWidth="1.7976931348623157E308" opacity="0.31" prefWidth="1000.0" VBox.margin="$x3">
+              <effect>
+                <Lighting specularConstant="1.5222222222222224">
+                  <bumpInput>
+                    <Shadow />
+                  </bumpInput>
+                  <light>
+                    <javafx.scene.effect.Light.Spot color="$x1" pointsAtZ="-100.0" x="100.0" y="100.0" z="100.0" />
+                  </light>
+                </Lighting>
+              </effect>
+            </Separator>
+            <Separator id="theSep" maxWidth="1.7976931348623157E308" opacity="0.31" prefWidth="1000.0" VBox.margin="$x3">
+              <effect>
+                <Lighting specularConstant="1.5222222222222224">
+                  <bumpInput>
+                    <Shadow />
+                  </bumpInput>
+                  <light>
+                    <javafx.scene.effect.Light.Spot color="$x1" pointsAtZ="-100.0" x="100.0" y="100.0" z="100.0" />
+                  </light>
+                </Lighting>
+              </effect>
+            </Separator>
+            <Separator id="theSep" maxWidth="1.7976931348623157E308" opacity="0.31" prefWidth="1000.0" VBox.margin="$x3">
+              <effect>
+                <Lighting specularConstant="1.5222222222222224">
+                  <bumpInput>
+                    <Shadow />
+                  </bumpInput>
+                  <light>
+                    <javafx.scene.effect.Light.Spot color="$x1" pointsAtZ="-100.0" x="100.0" y="100.0" z="100.0" />
+                  </light>
+                </Lighting>
+              </effect>
+            </Separator>
+            <BorderPane maxWidth="790.0" prefHeight="116.0" prefWidth="790.0">
+              <padding>
+                <Insets top="10.0" />
+              </padding>
+              <right>
+                <HBox prefHeight="106.0" prefWidth="237.0" spacing="5.0">
+                  <children>
+                    <Button fx:id="confirmButton" maxWidth="200.0" minWidth="55.0" mnemonicParsing="false" onAction="#saveTeacher" prefWidth="100.0" styleClass="confirm-button" text="%new.teacher.save" />
+                    <Button fx:id="cancelButton" maxWidth="200.0" minWidth="15.0" mnemonicParsing="false" prefWidth="100.0" styleClass="cancel-button" text="%new.student.cancel" />
+                  </children>
+                  <padding>
+                    <Insets fx:id="x2" />
+                  </padding>
+                  <BorderPane.margin>
+                    <Insets right="155.0" />
+                  </BorderPane.margin>
+                </HBox>
+              </right>
+            </BorderPane>
+          </children>
+          <padding>
+            <Insets left="10.0" />
+          </padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+  <stylesheets>
+    <URL value="@../css/login.css" />
+  </stylesheets>
+</AnchorPane>
